@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes cssload-fold-thecube {
+  0%, 10% {
+    transform: perspective(122px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    transform: perspective(122px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: perspective(122px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+.cssload-thecube {
+  width: 122px;
+  height: 122px;
+  position: relative;
+  transform: rotateZ(45deg);
+}
+
+.cssload-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transform: scale(1.1);
+}
+
+.cssload-cube:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(43,160,199);
+  animation: cssload-fold-thecube 2.76s infinite linear both;
+}
+
+.cssload-c1:before {
+  transform-origin: 100% 100%;
+}
+
+.cssload-c2 {
+  transform: scale(1.1) rotateZ(90deg);
+}
+
+.cssload-c2:before {
+  animation-delay: 0.35s;
+}
+
+.cssload-c3 {
+  transform: scale(1.1) rotateZ(180deg);
+}
+
+.cssload-c3:before {
+  animation-delay: 0.69s;
+}
+
+.cssload-c4 {
+  transform: scale(1.1) rotateZ(270deg);
+}
+
+.cssload-c4:before {
+  animation-delay: 1.04s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
